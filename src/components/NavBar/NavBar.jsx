@@ -56,13 +56,35 @@ const NavBar = ({ handleSignout }) => {
         <nav className={styles.container}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <div
+                className={
+                  selectedTab === "/" ? styles.linkBgSelected : styles.linkBg
+                }
+              >
+                <Link to="/">Home</Link>
+              </div>
             </li>
             <li>
-              <Link to="/signin">Log In</Link>
+              <div
+                className={
+                  selectedTab === "/signin"
+                    ? styles.linkBgSelected
+                    : styles.linkBg
+                }
+              >
+                <Link to="/signin">Log In</Link>
+              </div>
             </li>
             <li>
-              <Link to="/signup">Sign Up</Link>
+              <div
+                className={
+                  selectedTab === "/signup"
+                    ? styles.linkBgSelected
+                    : styles.linkBg
+                }
+              >
+                <Link to="/signup">Sign Up</Link>
+              </div>
             </li>
           </ul>
         </nav>
