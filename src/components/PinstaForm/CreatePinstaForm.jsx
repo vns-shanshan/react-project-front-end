@@ -8,7 +8,7 @@ const initialValue = {
   photos: "",
 };
 
-function PinstaForm({ user }) {
+function CreatePinstaForm({ user }) {
   const [formData, setFormData] = useState(initialValue);
   const navigate = useNavigate();
   //   const userId = user._id;
@@ -67,4 +67,4 @@ function PinstaForm({ user }) {
   );
 }
 
-export default PinstaForm;
+export default CreatePinstaForm;

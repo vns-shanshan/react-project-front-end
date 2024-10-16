@@ -9,7 +9,8 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import SignupForm from "./components/SignupForm/SignupForm";
 import SigninForm from "./components/SigninForm/SigninForm";
 import Profile from "./components/Profile/Profile";
-import PinstaForm from "./components/PinstaForm/CreatePinstaForm";
+import CreatePinstaForm from "./components/PinstaForm/CreatePinstaForm";
+import EditPinstaForm from "./components/PinstaForm/EditPinstaForm";
 
 import * as authService from "../src/services/authService"; // import the authservice
 
@@ -32,18 +33,20 @@ const App = () => {
             {user ? (
               <>
                 <Route path="/" element={<Dashboard user={user} />} />
-                <Route
-                  path="/profiles/:userId"
-                  element={<Profile user={user} />}
-                />
+
                 <Route
                   path="/pinstas/new"
-                  element={<PinstaForm user={user} />}
+                  element={<CreatePinstaForm user={user} />}
+                />
+                <Route
+                  path="/pinstas/:pinstaId/edit"
+                  element={<EditPinstaForm />}
                 />
               </>
             ) : (
               <Route path="/" element={<Landing />} />
             )}
+            <Route path="/profiles/:userId" element={<Profile />} />
             <Route path="/signup" element={<SignupForm setUser={setUser} />} />
             <Route path="/signin" element={<SigninForm setUser={setUser} />} />
           </Routes>

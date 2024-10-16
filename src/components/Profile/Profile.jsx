@@ -5,20 +5,22 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import * as pinstaService from "../../services/pinstaService";
 
-function Profile({ user }) {
+function Profile() {
   const [profile, setProfile] = useState(null);
   const loggedInUser = useContext(AuthedUserContext);
   const { userId } = useParams();
 
   async function handleDeletePinsta(pinstaId) {
-    await pinstaService.deletePinsta(pinstaId);
+    const isSuccessful = await pinstaService.deletePinsta(pinstaId);
 
-    const updatedPinstas = profile.posts.filter(
-      (pinsta) => pinsta._id !== pinstaId
-    );
+    if (isSuccessful) {
+      const updatedPinstas = profile.posts.filter(
+        (pinsta) => pinsta._id !== pinstaId
+      );
 
-    const updatedProfile = { ...profile, posts: updatedPinstas };
-    setProfile(updatedProfile);
+      const updatedProfile = { ...profile, posts: updatedPinstas };
+      setProfile(updatedProfile);
+    }
   }
 
   useEffect(() => {
@@ -35,14 +37,21 @@ function Profile({ user }) {
     return <p>...</p>;
   }
 
+  // add !! to ensure it's boolean
+  const isAuthor = !!loggedInUser && profile._id === loggedInUser._id;
+
+  const title = isAuthor
+    ? `Welcome, ${loggedInUser.username}`
+    : `${profile.username}'s Account`;
+
   return (
     <>
-      <h1>Welcome, {user.username}</h1>
+      <h1>{title}</h1>
 
       <div>
-        <h3>{user.username}</h3>
+        <h3>{profile.username}</h3>
         <h4>{profile.posts.length} Posts</h4>
-        <Link to="/pinstas/new">Create a Post</Link>
+        {isAuthor && <Link to="/pinstas/new">Create a Post</Link>}
       </div>
 
       <div>
@@ -50,9 +59,13 @@ function Profile({ user }) {
           <article key={post._id}>
             <header>
               <h4>{post.title}</h4>
-              <Link to={`/pinstas/${post._id}`}>Edit</Link>
+              {isAuthor ? (
+                <Link to={`/pinstas/${post._id}/edit`}>Edit</Link>
+              ) : (
+                ""
+              )}
 
-              {post.author_id === loggedInUser._id ? (
+              {isAuthor ? (
                 <button onClick={() => handleDeletePinsta(post._id)}>
                   Delete
                 </button>
