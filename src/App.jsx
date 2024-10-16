@@ -8,6 +8,9 @@ import Landing from "./components/Landing/Landing";
 import Dashboard from "./components/Dashboard/Dashboard";
 import SignupForm from "./components/SignupForm/SignupForm";
 import SigninForm from "./components/SigninForm/SigninForm";
+import Profile from "./components/Profile/Profile";
+import PinstaForm from "./components/PinstaForm/CreatePinstaForm";
+
 import * as authService from "../src/services/authService"; // import the authservice
 
 export const AuthedUserContext = createContext(null);
@@ -27,7 +30,17 @@ const App = () => {
           <NavBar user={user} handleSignout={handleSignout} />
           <Routes>
             {user ? (
-              <Route path="/" element={<Dashboard user={user} />} />
+              <>
+                <Route path="/" element={<Dashboard user={user} />} />
+                <Route
+                  path="/profiles/:userId"
+                  element={<Profile user={user} />}
+                />
+                <Route
+                  path="/pinstas/new"
+                  element={<PinstaForm user={user} />}
+                />
+              </>
             ) : (
               <Route path="/" element={<Landing />} />
             )}
