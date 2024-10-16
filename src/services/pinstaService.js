@@ -1,14 +1,20 @@
 const BACKEND_URL = import.meta.env.VITE_EXPRESS_BACKEND_URL;
 
 async function createPinsta(pinstaFormData) {
+
+    const newData = new FormData();
+    newData.append('title', pinstaFormData.title);
+    newData.append('caption', pinstaFormData.caption);
+    newData.append('photos', pinstaFormData.photos);
+
     try {
         const res = await fetch(`${BACKEND_URL}/pinstas`, {
             method: "POST",
             headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-                "Content-Type": "application/json"
+                Authorization: `Bearer ${localStorage.getItem("token")}`
             },
-            body: JSON.stringify(pinstaFormData)
+            body: newData
+            // body: JSON.stringify(pinstaFormData)
         });
         const data = await res.json();
 

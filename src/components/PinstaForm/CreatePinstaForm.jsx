@@ -28,6 +28,10 @@ function CreatePinstaForm({ user }) {
     handleAddPinsta(formData);
   }
 
+  function handleFileChange(e) {
+    setFormData((prev) => ({ ...prev, photos: e.target.files[0] }));
+  }
+
   return (
     <>
       <h1>Create</h1>
@@ -54,11 +58,11 @@ function CreatePinstaForm({ user }) {
         <label htmlFor="photos">Image</label>
         <input
           required
-          type="text"
+          type="file"
           id="photos"
           name="photos"
-          value={formData.photos}
-          onChange={handleChange}
+          // value={formData.photos}
+          onChange={handleFileChange}
         />
 
         <button type="submit">Create</button>

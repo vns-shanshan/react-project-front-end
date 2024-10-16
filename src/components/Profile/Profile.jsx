@@ -4,6 +4,7 @@ import * as profileService from "../../services/profileService";
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import * as pinstaService from "../../services/pinstaService";
+const BACKEND_URL = import.meta.env.VITE_EXPRESS_BACKEND_URL;
 
 function Profile() {
   const [profile, setProfile] = useState(null);
@@ -74,7 +75,7 @@ function Profile() {
               )}
             </header>
 
-            <img src={post.photos} alt={post.title} />
+            <img src={`${BACKEND_URL}${post.photos}`} alt={post.title} />
           </article>
         ))}
       </div>
