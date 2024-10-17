@@ -43,7 +43,7 @@ const Landing = () => {
             key={post._id}
             className={styles.postLink}
           >
-            <div className={styles.post}>
+            <div className={styles.photos}>
               <img
                 src={post.photos[0]}
                 alt={post.title}

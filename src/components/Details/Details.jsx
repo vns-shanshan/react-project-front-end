@@ -46,17 +46,17 @@ const Details = () => {
     }
   };
 
-  const handleLike = async () => {
-    if (!userLiked) {
-      try {
-        const updatedPost = await likePost(postId);
-        setUserLiked(true);
-        setPost(updatedPost);
-      } catch (error) {
-        console.error("Error liking post:", error);
-      }
-    }
-  };
+  // const handleLike = async () => {
+  //   if (!userLiked) {
+  //     try {
+  //       const updatedPost = await likePost(postId);
+  //       setUserLiked(true);
+  //       setPost(updatedPost);
+  //     } catch (error) {
+  //       console.error("Error liking post:", error);
+  //     }
+  //   }
+  // };
 
   if (!post) return <p>Loading...</p>;
 
@@ -78,9 +78,9 @@ const Details = () => {
         {/* Right Side: Text Content (Title, Likes, Comments) */}
         <div className={styles.textContent}>
           <h1 className={styles.title}>{post.title}</h1>
-          <button onClick={handleLike} disabled={userLiked} className={styles.likeButton}>
+          {/* <button onClick={handleLike} disabled={userLiked} className={styles.likeButton}>
             ❤️ {post.likes.length} {userLiked ? "Liked" : "Like"}
-          </button>
+          </button> */}
           <h2 className={styles.commentsTitle}>Comments</h2>
           <div className={styles.comments}>
             {comments.map((comment, index) => (
