@@ -1,31 +1,29 @@
-// src/components/Landing/Landing.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { fetchPosts } from "../../services/pinstaService";
+import styles from './Landing.module.css';
 
 const Landing = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // Simulated API call to fetch posts
-    const fetchPosts = async () => {
-      const samplePosts = [
-        { _id: "1", title: "Sample Post 1", imageURL: "https://via.placeholder.com/150" },
-        { _id: "2", title: "Sample Post 2", imageURL: "https://via.placeholder.com/150" },
-      ];
-      setPosts(samplePosts);
+    const loadPosts = async () => {
+      const posts = await fetchPosts();
+      console.log(posts);
+      setPosts(posts);
     };
-    fetchPosts();
+    loadPosts();
   }, []);
 
   return (
-    <div>
-      <h1>Explore Posts</h1>
-      <div className="post-grid">
+    <div className={styles.container}>
+      <h1 className={styles.title}>Landing Page</h1>
+      <div className={styles.postGrid}>
         {posts.map(post => (
           <Link to={`/details/${post._id}`} key={post._id}>
-            <div className="post">
-              <img src={post.imageURL} alt={post.title} />
-              <p>{post.title}</p>
+            <div className={styles.post}>
+              <img src={post.photos[0]} alt={post.title} className={styles.image} />
+              <p className={styles.postTitle}>{post.title}</p>
             </div>
           </Link>
         ))}

@@ -1,84 +1,91 @@
 /* Details.module.css */
-.detailsContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  color: #333;
+
+.detailsPage {
+  background-color: #FFFBF5; /* Light Cream */
+  color: #7743DB; /* Deep Purple */
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-.backButton {
-  font-size: 1.5rem;
+.backLink {
+  color: #C3ACD0; /* Light Purple */
   text-decoration: none;
-  color: #7743DB;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
-.postContent {
-  background-color: #FFF8F5;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.postTitle {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.userInfo {
+.mainContent {
   display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+  gap: 20px;
 }
 
-.profileIcon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #7743DB;
-  margin-right: 1rem;
+.image {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.username {
+.textContent {
+  max-width: 500px;
+}
+
+.title {
+  color: #7743DB; /* Deep Purple */
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.likes {
+  margin: 15px 0;
+}
+
+.likes button {
+  background-color: #C3ACD0; /* Light Purple */
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   font-weight: bold;
 }
 
-.postDate {
-  font-size: 0.9rem;
-  color: #888;
+.likes button:hover {
+  background-color: #7743DB; /* Deep Purple */
 }
 
-.imageContainer {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
+.comments {
+  margin-top: 20px;
 }
 
-.postImage {
-  width: 100%;
-  max-width: 500px;
-  height: 300px;
-  background-color: #C3ACD0;
+.comment {
+  background-color: #F7EFE5; /* Soft Beige */
+  padding: 10px;
   border-radius: 8px;
-}
-
-.postFooter {
+  margin-bottom: 10px;
   display: flex;
-  justify-content: space-around;
-  margin: 1rem 0;
-  color: #7743DB;
+  align-items: center;
 }
 
-.postDescription {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
+.comment p {
+  margin-left: 10px;
+  color: #7743DB; /* Deep Purple */
 }
 
-/* Details.module.css */
-.backButton {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #7743DB; /* Customize with your palette */
-  margin-bottom: 1rem;
+.commentInput {
+  border: 1px solid #C3ACD0;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.addCommentButton {
+  background-color: #7743DB; /* Deep Purple */
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
 }

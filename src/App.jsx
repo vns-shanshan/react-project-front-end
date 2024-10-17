@@ -1,4 +1,3 @@
-// App.jsx
 import { useState, createContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -24,11 +23,7 @@ const App = () => {
       <div id="app-container">
         <NavBar user={user} handleSignout={handleSignout} />
         <Routes>
-          {user ? (
-            <Route path="/" element={<Details user={user} />} />
-          ) : (
-            <Route path="/" element={<Landing />} />
-          )}
+          <Route path="/" element={<Landing />} />
           <Route path="/signup" element={<SignupForm setUser={setUser} />} />
           <Route path="/signin" element={<SigninForm setUser={setUser} />} />
           <Route path="/details/:postId" element={<Details />} />
