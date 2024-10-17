@@ -13,6 +13,7 @@
 } */
 
 .container {
+  background-color: #FFF;
   display: flex;
   justify-content: center;
   height: 80vh;
@@ -31,12 +32,15 @@
   }
 
   li {
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     user-select: none;
   }
 
   a {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 4px;
     text-decoration: none;
   }
 
@@ -44,19 +48,25 @@
     color: inherit;
   }
 
-  a:hover {
-    color: rgb(126, 125, 125);
-  }
+
 }
 
 .linkBgSelected {
-  background-color: #c3acd0;
+  background-color: #7743DB;
   padding: 1rem;
   border-radius: 4px;
   color: #fffbf5;
+  transition: background-color 0.3s;
 }
 
 .linkBg {
   padding: 1rem;
   border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.linkBg:hover {
+  background-color: #C3ACD0;
+  color: #FFFBF5;
+  font-weight: bold;
 }
