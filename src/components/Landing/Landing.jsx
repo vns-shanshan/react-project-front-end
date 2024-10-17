@@ -16,7 +16,7 @@ const Landing = () => {
   }, []);
 
   const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+    post.title?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -37,7 +37,7 @@ const Landing = () => {
         />
       </div>
       <div className={styles.postGrid}>
-        {posts.map((post) => (
+        {filteredPosts.map((post) => (
           <Link
             to={`/details/${post._id}`}
             key={post._id}
