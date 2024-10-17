@@ -76,7 +76,7 @@ function EditPinstaForm() {
 
   return (
     <div className={styles.formPage}>
-      <form onSubmit={handleSubmit} className={styles.eachForm}>
+      <form onSubmit={handleSubmit} className={styles.eachForm} noValidate>
         <h1>Edit Pinsta</h1>
         <label htmlFor="title">Title</label>
         <input
