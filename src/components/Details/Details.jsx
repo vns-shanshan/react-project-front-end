@@ -4,7 +4,7 @@ import styles from "./Details.module.css";
 import {
   getPostDetails,
   createComment,
-  likePost,
+  //likePost,
 } from "../../services/pinstaService";
 
 const Details = () => {
@@ -12,7 +12,7 @@ const Details = () => {
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-  const [userLiked, setUserLiked] = useState(false);
+  //const [userLiked, setUserLiked] = useState(false);
 
   useEffect(() => {
     const fetchPostDetails = async () => {
@@ -20,7 +20,7 @@ const Details = () => {
         const postDetails = await getPostDetails(postId);
         setPost(postDetails);
         setComments(postDetails.comments);
-        setUserLiked(
+        (
           postDetails.likes.some(
             (like) => like.author_id === localStorage.getItem("userId")
           )
