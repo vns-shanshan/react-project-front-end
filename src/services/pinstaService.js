@@ -75,9 +75,9 @@ async function showPinsta(pinstaId) {
 
 
 // Fetch all posts
-export const fetchPosts = async () => {
+ const fetchPosts = async () => {
   try {
-    const res = await fetch(`${BASE_URL}/pinstas`, {
+    const res = await fetch(`${BACKEND_URL}/pinstas`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -91,9 +91,9 @@ export const fetchPosts = async () => {
 };
 
 // Fetch post details by postId
-export const getPostDetails = async (postId) => {
+ const getPostDetails = async (postId) => {
   try {
-    const res = await fetch(`${BASE_URL}/pinstas/${postId}`, {
+    const res = await fetch(`${BACKEND_URL}/pinstas/${postId}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -107,12 +107,12 @@ export const getPostDetails = async (postId) => {
 };
 
 // Create a comment for a specific post
-export const createComment = async (postId, commentData) => {
+const createComment = async (postId, commentData) => {
   const token = localStorage.getItem('token');
   if (!token) throw new Error("No token found");
 
   try {
-    const res = await fetch(`${BASE_URL}/pinstas/${postId}/comments`, {
+    const res = await fetch(`${BACKEND_URL}/pinstas/${postId}/comments`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -129,12 +129,12 @@ export const createComment = async (postId, commentData) => {
 };
 
 // Like a specific post
-export const likePost = async (postId) => {
+const likePost = async (postId) => {
   const token = localStorage.getItem('token');
   if (!token) throw new Error("No token found");
 
   try {
-    const res = await fetch(`${BASE_URL}/pinstas/${postId}/like`, {
+    const res = await fetch(`${BACKEND_URL}/pinstas/${postId}/like`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
