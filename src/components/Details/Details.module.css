@@ -1,0 +1,94 @@
+.detailsPage {
+  padding: 20px;
+  background-color: #f7efe5;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px; /* Space between image and content */
+  max-width: 1200px; /* Increased to allow more space for the image */
+  margin: 0 auto;
+}
+
+.imageContainer {
+  flex: 1.2; /* Slightly increased to make the image area larger */
+  max-width: 500px; /* Increased max width to allow the image to expand */
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.textContent {
+  flex: 1; /* Reduced the text area width slightly to balance the larger image */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 24px;
+  color: #7743db;
+  margin-bottom: 10px;
+}
+
+.likeButton {
+  background-color: #c3acd0;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.commentsTitle {
+  font-size: 20px;
+  color: #7743db;
+  margin-top: 20px;
+}
+
+.comments {
+  margin-top: 10px;
+}
+
+.comment {
+  background-color: #fffbf5;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.commentInput {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.backLink {
+  color: #7743db; /* Match your theme color */
+  font-weight: bold;
+  text-decoration: none; /* Remove the default underline */
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+  font-size: 16px; /* Slightly larger font size */
+  padding: 5px 10px; /* Add padding for a button-like appearance */
+  border-radius: 8px;
+  background-color: #f7efe5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.backLink:hover {
+  background-color: #c3acd0; /* Slightly darker on hover */
+  color: #fff; /* White text on hover */
+}
+
