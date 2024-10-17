@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as pinstaService from "../../services/pinstaService";
 import { useNavigate } from "react-router-dom";
+import styles from "./PinstaForm.module.css";
 
 const initialValue = {
   title: "",
@@ -33,9 +34,9 @@ function CreatePinstaForm({ user }) {
   }
 
   return (
-    <>
-      <h1>Create</h1>
-      <form onSubmit={handleSubmit}>
+    <div className={styles.formPage}>
+      <form onSubmit={handleSubmit} className={styles.eachForm}>
+        <h1>Create Pinsta</h1>
         <label htmlFor="title">Title</label>
         <input
           required
@@ -67,7 +68,7 @@ function CreatePinstaForm({ user }) {
 
         <button type="submit">Create</button>
       </form>
-    </>
+    </div>
   );
 }
 

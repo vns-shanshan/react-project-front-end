@@ -4,6 +4,8 @@ import { AuthedUserContext } from "../../App";
 
 import * as pinstaService from "../../services/pinstaService";
 
+import styles from "./PinstaForm.module.css";
+
 function EditPinstaForm() {
   const [formData, setFormData] = useState({
     title: "",
@@ -38,9 +40,9 @@ function EditPinstaForm() {
   }
 
   return (
-    <>
-      <h1>Edit</h1>
-      <form onSubmit={handleSubmit}>
+    <div className={styles.formPage}>
+      <form onSubmit={handleSubmit} className={styles.eachForm}>
+        <h1>Edit Pinsta</h1>
         <label htmlFor="title">Title</label>
         <input
           required
@@ -72,7 +74,7 @@ function EditPinstaForm() {
 
         <button type="submit">Update</button>
       </form>
-    </>
+    </div>
   );
 }
 
