@@ -1,40 +1,93 @@
 /* Landing.module.css */
+
 .container {
-  background-color: #FFFBF5;
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .title {
+  font-size: 2.5em;
+  text-align: center;
   color: #7743DB;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #F7EFE5, #C3ACD0);
+  color: #7743DB;
+  border-radius: 8px;
+}
+
+.description {
+  font-size: 1.2em;
+  color: #7743DB;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.searchInput {
+  padding: 10px;
+  width: 80%;
+  max-width: 500px;
+  border: 2px solid #C3ACD0;
+  border-radius: 50px;
+  outline: none;
+  font-size: 1em;
 }
 
 .postGrid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-  justify-content: center;
+  margin-top: 20px;
 }
 
 .post {
-  background-color: #F7EFE5;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 150px;
   text-align: center;
+  background: #F7EFE5;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .image {
   width: 100%;
-  max-height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .postTitle {
-  color: #7743DB;
+  font-size: 1.1rem; /* Adjust font size */
   font-weight: bold;
-  margin-top: 10px;
+  color: #7743db; /* Match theme color */
+  text-align: center;
+  padding-top: 5px;
+  margin: 0;
+  transition: color 0.3s ease;
 }
+
+.postLink {
+  text-decoration: none;
+}
+
+.postTitle:hover {
+  color: #c3acd0; /* Slightly lighter on hover */
+  text-decoration: underline; /* Optional underline on hover */
+}
+

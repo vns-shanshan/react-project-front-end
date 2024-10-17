@@ -35,19 +35,14 @@ const Details = () => {
   const handleAddComment = async () => {
     if (newComment.trim()) {
       try {
-        console.log("Attempting to add comment:", newComment); // Debugging log
         const updatedPost = await createComment(postId, {
           commentDetails: newComment,
         });
-        console.log("Updated post with new comment:", updatedPost);
-
-        setComments(updatedPost.comments); // Update comments with the latest data
-        setNewComment(""); // Clear input
+        setComments(updatedPost.comments);
+        setNewComment("");
       } catch (error) {
         console.error("Error adding comment:", error);
       }
-    } else {
-      console.warn("Comment cannot be empty");
     }
   };
 
@@ -70,34 +65,26 @@ const Details = () => {
       <Link to="/" className={styles.backLink}>
         ← Back to Home
       </Link>
-      <div className={styles.mainContent}>
-        <div className={styles.photoGallery}>
-          {post.photos.map((photo, index) => (
-            <img
-              key={index}
-              src={photo}
-              alt={`Photo ${index + 1}`}
-              className={styles.image}
-            />
-          ))}
+      <div className={styles.contentWrapper}>
+        {/* Left Side: Image */}
+        <div className={styles.imageContainer}>
+          <img
+            src={post.photos[0]}
+            alt={post.title}
+            className={styles.image}
+          />
         </div>
+
+        {/* Right Side: Text Content (Title, Likes, Comments) */}
         <div className={styles.textContent}>
           <h1 className={styles.title}>{post.title}</h1>
-          <p>{post.content}</p>
-          <div className={styles.likes}>
-            <button onClick={handleLike} disabled={userLiked}>
-              ❤️ {post.likes.length} {userLiked ? "Liked" : "Like"}
-            </button>
-          </div>
-          <h2>Comments</h2>
+          <button onClick={handleLike} disabled={userLiked} className={styles.likeButton}>
+            ❤️ {post.likes.length} {userLiked ? "Liked" : "Like"}
+          </button>
+          <h2 className={styles.commentsTitle}>Comments</h2>
           <div className={styles.comments}>
             {comments.map((comment, index) => (
               <div key={index} className={styles.comment}>
-                <img
-                  src={comment.avatar || "https://via.placeholder.com/40"}
-                  alt="User avatar"
-                  className={styles.avatar}
-                />
                 <strong>{comment.author}</strong>
                 <p>{comment.commentDetails}</p>
               </div>
