@@ -72,3 +72,29 @@
   color: #7743db;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.imagePreview {
+  width: 200px;
+  height: 200px;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dotted purple;
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  position: relative;
+}
+
+.editImage {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 32px;
+  text-shadow: 5px 5px #558abb;
+  cursor: pointer;
+}
