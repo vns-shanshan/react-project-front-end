@@ -1,8 +1,15 @@
-# React + Vite
+# Pinstagram
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Pinstagram is a dynamic social media platform that allows users to share images, engage with content, and foster community interaction via comments. This app provides a space for users to express creativity, connect with others globally, and participate in an active visual community.
 
-Currently, two official plugins are available:
+## Features
+- **User Authentication**: Sign up, sign in, and sign out.
+- **Post Images**: Users can upload images that can be viewd by other Users.
+- **Comments**: Users can comment on posts.
+- **User Profiles**: View and Create user profiles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **Frontend**: React.js, CSS Modules
+- **Backend**: Node.js, Express.js, MongoDB, CORS
+- **Authentication**: JSON Web Tokens (JWT)

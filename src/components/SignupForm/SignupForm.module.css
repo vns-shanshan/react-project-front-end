@@ -4,12 +4,14 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    margin-left: 590px;
 }
 
 .formBox {
     padding: 2rem;
     border: 2px solid #1e1038;
     border-radius: 8px;
+    background-color: #FFFFFF;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

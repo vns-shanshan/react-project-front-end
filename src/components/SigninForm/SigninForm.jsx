@@ -32,7 +32,7 @@ const SigninForm = ({ setUser }) => {
 
   return (
     <main className={styles.container}>
-      <div className={styles.formBox}>
+      <div className={`${styles.formBox} ${styles.signupinBox}`}>
         <h1 className={styles.title}>Log In</h1>
         <p>{message}</p>
         <form onSubmit={handleSubmit}>
