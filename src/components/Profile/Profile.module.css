@@ -1,0 +1,160 @@
+/* General Styles */
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #7743db;
+}
+
+.profileSection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+
+  margin: 0 auto 50px;
+}
+
+.profileRightSection {
+  display: flex;
+  width: calc(100% - 100px);
+  height: 100px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profilePic {
+  width: 100px;
+  height: 100px;
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+}
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.userInfo h3 {
+  margin: 0;
+}
+
+.userInfo a {
+  text-decoration: none;
+  padding-right: 20px;
+}
+
+.postCount {
+  width: 100%;
+}
+
+.postCount h4 {
+  margin: 0;
+}
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.postCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postHeader h4 {
+  margin: 0;
+}
+
+.postActions {
+  display: flex;
+  gap: 10px;
+}
+
+.postCard img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Base Button Styles */
+button,
+a {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* Create Post Button */
+.createButton {
+  background-color: #7743db;
+  color: #fffbf5;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 40px;
+}
+
+.createButton:hover {
+  background-color: #c3acd0;
+  color: #7743db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Edit Button */
+.editButton {
+  background-color: #c3acd0;
+  color: #7743db;
+}
+
+.editButton:hover {
+  background-color: #f7efe5;
+  color: #7743db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Delete Button */
+.deleteButton {
+  background-color: #f7efe5;
+  color: #7743db;
+  border: 2px solid #7743db;
+}
+
+.deleteButton:hover {
+  background-color: #fffbf5;
+  color: #c3acd0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
