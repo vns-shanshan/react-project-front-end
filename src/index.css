@@ -16,6 +16,8 @@
   * {
     box-sizing: border-box;
   }
+  /* prevent scroll bar from affecting layout */
+  scrollbar-gutter: stable both-edges;
 }
 
 /* a {

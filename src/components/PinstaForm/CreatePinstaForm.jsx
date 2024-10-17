@@ -57,10 +57,10 @@ function CreatePinstaForm({ user }) {
   const preview = previewSrc ? (
     <>
       <img src={previewSrc} />
-      <div className={styles.editImage}>✏️</div>
+      <div className={styles.toolIcon}>✏️</div>
     </>
   ) : (
-    "➕"
+    <div className={styles.plusIcon}>➕</div>
   );
 
   return (

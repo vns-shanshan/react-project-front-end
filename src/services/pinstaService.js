@@ -40,14 +40,18 @@ async function deletePinsta(pinstaId) {
 }
 
 async function editPinsta(pinstaFormData, pinstaId) {
+    const updatedData = new FormData();
+    updatedData.append('title', pinstaFormData.title);
+    updatedData.append('caption', pinstaFormData.caption);
+    updatedData.append('photos', pinstaFormData.photos);
+
     try {
         const res = await fetch(`${BACKEND_URL}/pinstas/${pinstaId}`, {
             method: "PUT",
             headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-                "Content-Type": "application/json"
+                Authorization: `Bearer ${localStorage.getItem("token")}`
             },
-            body: JSON.stringify(pinstaFormData)
+            body: updatedData
         });
         const data = await res.json();
 

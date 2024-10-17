@@ -90,11 +90,15 @@
   position: relative;
 }
 
-.editImage {
+.toolIcon {
   position: absolute;
   right: 0px;
   top: 0px;
   font-size: 32px;
   text-shadow: 5px 5px #558abb;
+}
+
+.toolIcon,
+.plusIcon {
   cursor: pointer;
 }
