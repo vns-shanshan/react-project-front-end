@@ -21,6 +21,9 @@
   border-radius: 8px;
   margin: 5rem;
   font-weight: bold;
+  /* keep navbar at fixed position on the screen */
+  position: sticky;
+  top: 80px;
 
   ul {
     list-style: none;

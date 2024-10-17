@@ -1,0 +1,104 @@
+/* Full Page Layout */
+.formPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Form Styling */
+.eachForm {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Heading */
+.eachForm h1 {
+  text-align: center;
+  color: #7743db;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* Input and Textarea */
+.eachForm input[type="text"],
+.eachForm textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c3acd0;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* File Input */
+.eachForm input[type="file"] {
+  padding: 5px 0;
+  font-size: 16px;
+  border: none;
+}
+
+/* Labels */
+.eachForm label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7743db;
+}
+
+/* Submit Button */
+.eachForm button {
+  padding: 12px 20px;
+  width: 100%;
+  background-color: #7743db;
+  color: #fffbf5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Button Hover Effect */
+.eachForm button:hover {
+  background-color: #c3acd0;
+  color: #7743db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagePreview {
+  width: 200px;
+  height: 200px;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dotted purple;
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  position: relative;
+}
+
+.toolIcon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 32px;
+  text-shadow: 5px 5px #558abb;
+}
+
+.toolIcon,
+.plusIcon {
+  cursor: pointer;
+}

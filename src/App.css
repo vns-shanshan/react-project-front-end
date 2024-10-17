@@ -42,6 +42,8 @@
 } */
 
 #app-container {
+  width: 1200px;
+  /* center container */
+  margin: 0 auto;
   display: flex;
-  box-sizing: border-box;
 }
