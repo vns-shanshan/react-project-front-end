@@ -20,10 +20,8 @@ const Details = () => {
         const postDetails = await getPostDetails(postId);
         setPost(postDetails);
         setComments(postDetails.comments);
-        (
-          postDetails.likes.some(
-            (like) => like.author_id === localStorage.getItem("userId")
-          )
+        postDetails.likes.some(
+          (like) => like.author_id === localStorage.getItem("userId")
         );
       } catch (error) {
         console.error("Error fetching post details:", error);
@@ -68,19 +66,17 @@ const Details = () => {
       <div className={styles.contentWrapper}>
         {/* Left Side: Image */}
         <div className={styles.imageContainer}>
-          <img
-            src={post.photos[0]}
-            alt={post.title}
-            className={styles.image}
-          />
+          <img src={post.photos[0]} alt={post.title} className={styles.image} />
         </div>
 
         {/* Right Side: Text Content (Title, Likes, Comments) */}
         <div className={styles.textContent}>
           <h1 className={styles.title}>{post.title}</h1>
+
           {/* <button onClick={handleLike} disabled={userLiked} className={styles.likeButton}>
             ❤️ {post.likes.length} {userLiked ? "Liked" : "Like"}
           </button> */}
+          
           <h2 className={styles.commentsTitle}>Comments</h2>
           <div className={styles.comments}>
             {comments.map((comment, index) => (

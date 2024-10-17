@@ -45,7 +45,7 @@ const Landing = () => {
           >
             <div className={styles.photos}>
               <img
-                src={post.photos[0]}
+                src={post.photos}
                 alt={post.title}
                 className={styles.image}
               />
