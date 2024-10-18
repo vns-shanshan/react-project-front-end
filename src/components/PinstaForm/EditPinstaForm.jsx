@@ -90,6 +90,7 @@ function EditPinstaForm() {
 
         <label htmlFor="caption">Caption</label>
         <textarea
+          required
           type="text"
           id="caption"
           name="caption"
