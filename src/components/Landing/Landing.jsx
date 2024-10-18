@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchPosts } from "../../services/pinstaService";
 import styles from "./Landing.module.css";
+const BACKEND_URL = import.meta.env.VITE_EXPRESS_BACKEND_URL;
 
 const Landing = () => {
   const [posts, setPosts] = useState([]);
@@ -45,7 +46,7 @@ const Landing = () => {
           >
             <div className={styles.photos}>
               <img
-                src={post.photos}
+                src={`${BACKEND_URL}${post.photos}`}
                 alt={post.title}
                 className={styles.image}
               />

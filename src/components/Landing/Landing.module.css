@@ -2,28 +2,28 @@
 
 .container {
   padding: 20px;
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
 }
 
 .title {
   font-size: 2.5em;
   text-align: center;
-  color: #7743DB;
+  color: #7743db;
   margin-bottom: 10px;
 }
 
 .header {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(135deg, #F7EFE5, #C3ACD0);
-  color: #7743DB;
+  background: linear-gradient(135deg, #f7efe5, #c3acd0);
+  color: #7743db;
   border-radius: 8px;
 }
 
 .description {
   font-size: 1.2em;
-  color: #7743DB;
+  color: #7743db;
   text-align: center;
   margin-top: 8px;
 }
@@ -39,7 +39,7 @@
   padding: 10px;
   width: 80%;
   max-width: 500px;
-  border: 2px solid #C3ACD0;
+  border: 2px solid #c3acd0;
   border-radius: 50px;
   outline: none;
   font-size: 1em;
@@ -54,7 +54,7 @@
 
 .post {
   text-align: center;
-  background: #F7EFE5;
+  background: #f7efe5;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -90,4 +90,3 @@
   color: #c3acd0; /* Slightly lighter on hover */
   text-decoration: underline; /* Optional underline on hover */
 }
-

@@ -6,6 +6,7 @@ import {
   createComment,
   //likePost,
 } from "../../services/pinstaService";
+const BACKEND_URL = import.meta.env.VITE_EXPRESS_BACKEND_URL;
 
 const Details = () => {
   const { postId } = useParams();
@@ -66,7 +67,11 @@ const Details = () => {
       <div className={styles.contentWrapper}>
         {/* Left Side: Image */}
         <div className={styles.imageContainer}>
-          <img src={post.photos} alt={post.title} className={styles.image} />
+          <img
+            src={`${BACKEND_URL}${post.photos}`}
+            alt={post.title}
+            className={styles.image}
+          />
         </div>
 
         {/* Right Side: Text Content (Title, Likes, Comments) */}
@@ -81,7 +86,7 @@ const Details = () => {
           <div className={styles.comments}>
             {comments.map((comment, index) => (
               <div key={index} className={styles.comment}>
-                <strong>{comment.author}</strong>
+                <strong>{comment.author_id.username}</strong>
                 <p>{comment.commentDetails}</p>
               </div>
             ))}
